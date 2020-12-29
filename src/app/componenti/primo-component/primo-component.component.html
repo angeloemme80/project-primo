@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <p>{{'stringa'}} {{mese}} del {{anno}}</p>
+        </div>
+        <div class="col-md">
+            <p>{{'stringa'}} {{mese}} del {{anno}}</p>
+        </div>
+        <div class="col-md">
+            <button class="btn btn-primary" [disabled]="!abilitato">Nuovo</button>
+        </div>
+        <div class="col-md">
+            <p [innerText]="abilitato" [class]="nomeDellaClasse"></p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+    </div>
+  </div>
+<!--<app-secondo-component></app-secondo-component>-->
