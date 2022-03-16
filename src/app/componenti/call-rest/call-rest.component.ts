@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Info } from 'src/app/componenti/call-rest/Info'
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-call-rest',
@@ -17,7 +18,8 @@ export class CallRestComponent implements OnInit {
   idSessione: string;
 
   getContatore() {
-    return this.http.get<Info>('http://localhost:8080/').subscribe( resp => {
+    
+    return this.http.get<Info>(environment.appApiEndpoint).subscribe( resp => {
       console.log(resp);
       console.log(resp.data.contatore);
       console.log(resp.data.req.sessionId);
