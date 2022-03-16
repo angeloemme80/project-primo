@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  appApiEndpoint: 'http://localhost:8080/'
+  appApiEndpoint: 'http://demo-spring-boot-angeloprj.apps-crc.testing'
 };
