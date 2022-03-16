@@ -1,2 +1,14 @@
-<app-primo-component>
-</app-primo-component>
+<app-header></app-header>
+<hr>
+<app-call-rest></app-call-rest>
+<hr>
+<app-table></app-table>
+<hr>
+<app-primo-component [inputItem]="daPassareAlComponentFiglio()" (outputDaInviareAlPadre)="emessoDalPadre($event)"></app-primo-component>
+<hr>
+<app-secondo-component></app-secondo-component>
+<hr>
+<app-prova-ng><p>FUORI provaNG</p></app-prova-ng>
+<app-prova-ng><p>FUORI provaNG 2</p></app-prova-ng>
+<hr>
+<app-form></app-form>

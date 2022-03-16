@@ -3,29 +3,42 @@
         <div class="col-md">
             <p>{{'stringa'}} {{mese}} del {{anno}}</p>
         </div>
-        <div class="col-md">
+        <div class="col-md" *ngIf="abilitato">
             <p>{{'stringa'}} {{mese}} del {{anno}}</p>
         </div>
         <div class="col-md">
-            <button class="btn btn-primary" [disabled]="!abilitato">Nuovo</button>
+            <button class="btn btn-primary" [disabled]="!abilitato" (click)="onCreateCalendario()" (mouseover)="onMouseOver()">Nuovo</button>
+        </div>
+        <!--<div class="col-md">
+            <p [innerText]="abilitato" [class]="nomeDellaClasse"></p>
+        </div>-->
+        <div class="col-md">
+            <p #marcatoreCalendario>{{calendarioCreato}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            <input type="text" (input)="onInput($event)">
+            <p>{{valoreDiInput}}</p>
         </div>
         <div class="col-md">
-            <p [innerText]="abilitato" [class]="nomeDellaClasse"></p>
+            <!--In questo caso #idRiferimento serve a marcare tutto l'elemento input e a pasarlo al nostro file TypeScript-->
+            <input type="text" [(ngModel)]="valoreDiInput" #idRiferimento (input)="passoOggetto(idRiferimento)">
+            <p>{{valoreDiInput}}</p>
+        </div>
+        <div class="col-md">
+            <input type="text" #marcatoInput>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md">
+            <p>inputItem: {{inputItem}}</p>
+        </div>
+        <div class="col-md">
+            <button class="btn btn-primary" (click)="emettiAlPadre(marcatoreCalendario.textContent)">Emetti al Padre</button>
         </div>
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
-    </div>
-  </div>
+
 <!--<app-secondo-component></app-secondo-component>-->

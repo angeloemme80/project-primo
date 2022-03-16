@@ -1,3 +1,7 @@
-<input type="text" >
-<p>{{variabile}}</p>
+<button class="btn btn-primary" (click)="toggle=!toggle;onClick($event)">Display Details</button>
+<p *ngIf="!toggle">Ciao A tutti</p>
+<div *ngFor="let ev of eventi; let i = index">
+    <p *ngIf="i<5">{{i}} - {{ev.timeStamp}}</p>
+    <p *ngIf="i>5" [ngStyle]="{'background-color':'blue'}" [ngClass]="getClassBianco()">{{i}} - {{ev.clientX}} - VITTORIA</p>
+</div>
 

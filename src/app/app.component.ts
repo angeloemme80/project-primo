@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'project-primo';
+
+  daPassareAlComponentFiglio(){
+    return "valore passato dal padre al figlio";
+  }
+
+  emessoDalPadre(event:Event){
+    console.log("Valore passato dal figlio al padre: " + event);
+  }
+
+  
 }
+

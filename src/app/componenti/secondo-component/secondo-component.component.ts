@@ -7,24 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SecondoComponentComponent implements OnInit {
 
+  toggle:boolean;
+  eventi = [];
+
   constructor() { }
 
-  variabile:string;
-  prima:Prima =  new Prima;
+  
+  
 
   ngOnInit(): void {
-    this.variabile = 'Ecco la mia SECONDA variabile';
-    
-    this.prima.logga("ciaooooooooooooooooooooo");
-    
+       this.toggle = true;
   }
 
+  onClick(evento:Event){
+    console.log(evento);
+    this.eventi.push(evento);
+  }
 
+  getClassBianco(){
+    return "text-white"
+  }
 
 }
 
-class Prima {
-  public logga(p:string) {
-      console.log(p)
-  }
-}
