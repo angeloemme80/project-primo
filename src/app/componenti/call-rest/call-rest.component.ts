@@ -16,6 +16,7 @@ export class CallRestComponent implements OnInit {
   }
 
   idSessione: string;
+  contatore: number;
 
   getContatore() {
     return this.http.get<Info>(environment.appApiEndpoint, { withCredentials: true }).subscribe( resp => {
@@ -23,6 +24,7 @@ export class CallRestComponent implements OnInit {
       console.log(resp.data.contatore);
       console.log(resp.data.req.sessionId);
       this.idSessione = resp.data.req.sessionId;
+      this.contatore = resp.data.contatore;
     })
   }
 
