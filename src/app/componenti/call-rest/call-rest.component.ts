@@ -18,8 +18,7 @@ export class CallRestComponent implements OnInit {
   idSessione: string;
 
   getContatore() {
-    
-    return this.http.get<Info>(environment.appApiEndpoint).subscribe( resp => {
+    return this.http.get<Info>(environment.appApiEndpoint, { withCredentials: true }).subscribe( resp => {
       console.log(resp);
       console.log(resp.data.contatore);
       console.log(resp.data.req.sessionId);
