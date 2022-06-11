@@ -1,0 +1,19 @@
+da deployare su un server http (Apache httpd oppure nginx)
+
+oc login -u UTENTE -p PASSWORD https://LINK_di_openshift
+oc new-project primo-project
+oc new-app --name project-primo https://github.com/angeloemme80/project-primo
+
+immettere utente e token (vedi il token su github->impostazioni sviluppatore) (ricordati di avere il progetto come pubblico e non come privato)
+utente:angeloemme80@alice.it
+password: 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
+
+oc expose svc/project-primo
+oc get route
+
+
+
+
+su openshift locale (crc) la url è la seguente: http://project-primo-angeloprj.apps-crc.testing/project-primo
+
+
